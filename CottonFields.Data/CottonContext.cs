@@ -1,5 +1,7 @@
-﻿using CottonFields.Domain;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Console;
+using CottonFields.Domain;
 
 namespace CottonFields.Data
 {
@@ -12,6 +14,13 @@ namespace CottonFields.Data
         public DbSet<Track> Tracks { get; set; }
         public DbSet<User> Users { get; set; }
 
+        public static readonly LoggerFactory CottonLoggerFactory
+            = new LoggerFactory(new[] {
+            new ConsoleLoggerProvider((category, level)
+                => category == DbLoggerCategory.Database.Command.Name
+                && level == LogLevel.Information, true)
+            });
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<UserRelease>().HasKey(m => new { m.UserID, m.ReleaseID});
@@ -19,7 +28,12 @@ namespace CottonFields.Data
 
         protected override void OnConfiguring (DbContextOptionsBuilder optionBuilder)
         {
-            optionBuilder.UseSqlServer("Server = (localdb)\\mssqllocaldb; Database = CottonDb; Trusted_Connection = True;");
+            optionBuilder
+                .EnableSensitiveDataLogging()
+                .UseLoggerFactory(CottonLoggerFactory)
+                .UseSqlServer("Server = (localdb)\\mssqllocaldb; Database = CottonDb; Trusted_Connection = True;");
         }
     }
 }
+
+//Data Source = (localdb)\MSSQLLocalDB;Integrated Security = True; Connect Timeout = 30; Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False

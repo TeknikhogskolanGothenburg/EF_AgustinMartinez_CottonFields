@@ -106,22 +106,22 @@ namespace CottonFields.Data.Migrations
 
             modelBuilder.Entity("CottonFields.Domain.User", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("Birthday");
+
+                    b.Property<string>("Email");
 
                     b.Property<string>("Name");
 
                     b.Property<string>("Nationality");
 
-                    b.Property<string>("email");
+                    b.Property<string>("Password");
 
-                    b.Property<string>("password");
+                    b.Property<int>("Phone");
 
-                    b.Property<int>("phone");
-
-                    b.HasKey("Id");
+                    b.HasKey("ID");
 
                     b.ToTable("Users");
                 });

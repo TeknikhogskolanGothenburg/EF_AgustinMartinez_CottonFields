@@ -9,13 +9,13 @@ namespace CottonFields.Domain
         {
             Releases = new List<UserRelease>();
         }
-        public int Id { get; set; }
+        public int ID { get; set; }
         public string Name { get; set; }
         public DateTime Birthday { get; set; }
         public string Nationality { get; set; }
-        public int phone { set; get; }
-        public string email { get; set; }
-        public string password { get; set; }
+        public int Phone { set; get; }
+        public string Email { get; set; }
+        public string Password { get; set; }
         public List<UserRelease> Releases { get; set; }
     }
 }
