@@ -9,7 +9,7 @@ namespace CottonFields.Data
     {
         public DbSet<Artist> Artists { get; set; }
         public DbSet<Label> Labels { get; set; }
-        public DbSet<MatrixNumber> MatrixNumbers { get; set; }
+        public DbSet<MatrixNumber> MatrixNumber { get; set; }
         public DbSet<Release> Releases { get; set; }
         public DbSet<Track> Tracks { get; set; }
         public DbSet<User> Users { get; set; }
@@ -31,9 +31,8 @@ namespace CottonFields.Data
             optionBuilder
                 .EnableSensitiveDataLogging()
                 .UseLoggerFactory(CottonLoggerFactory)
-                .UseSqlServer("Server = (localdb)\\mssqllocaldb; Database = CottonDb; Trusted_Connection = True;");
+                .UseSqlServer("Data Source=DESKTOP-FAGSG73\\SQLEXPRESS;Initial Catalog=CottonDb;Integrated Security=True;Pooling=False");
         }
     }
 }
-
-//Data Source = (localdb)\MSSQLLocalDB;Integrated Security = True; Connect Timeout = 30; Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False
+//.UseSqlServer("Server = (localdb)\\mssqllocaldb; Database = CottonDb; Trusted_Connection = True;");

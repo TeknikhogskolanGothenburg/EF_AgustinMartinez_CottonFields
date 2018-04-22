@@ -118,6 +118,26 @@
     <Compile Include="Migrations\20180313132742_init3.designer.cs">
       <DependentUpon>20180313132742_init3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20180314142020_release_correction.cs" />
+    <Compile Include="Migrations\20180314142020_release_correction.designer.cs">
+      <DependentUpon>20180314142020_release_correction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20180315100647_rename_MatrixNumber.cs" />
+    <Compile Include="Migrations\20180315100647_rename_MatrixNumber.designer.cs">
+      <DependentUpon>20180315100647_rename_MatrixNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20180315102652_nation_correction.cs" />
+    <Compile Include="Migrations\20180315102652_nation_correction.designer.cs">
+      <DependentUpon>20180315102652_nation_correction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20180315111152_release_correction2.cs" />
+    <Compile Include="Migrations\20180315111152_release_correction2.designer.cs">
+      <DependentUpon>20180315111152_release_correction2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20180422113322_rocky.cs" />
+    <Compile Include="Migrations\20180422113322_rocky.designer.cs">
+      <DependentUpon>20180422113322_rocky.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\CottonContextModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

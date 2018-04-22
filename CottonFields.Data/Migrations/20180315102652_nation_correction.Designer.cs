@@ -11,9 +11,10 @@ using System;
 namespace CottonFields.Data.Migrations
 {
     [DbContext(typeof(CottonContext))]
-    partial class CottonContextModelSnapshot : ModelSnapshot
+    [Migration("20180315102652_nation_correction")]
+    partial class nation_correction
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -71,7 +72,11 @@ namespace CottonFields.Data.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("Artist");
+
                     b.Property<int?>("ArtistID");
+
+                    b.Property<string>("Label");
 
                     b.Property<int?>("LabelID");
 

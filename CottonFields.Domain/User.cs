@@ -12,7 +12,7 @@ namespace CottonFields.Domain
         public int ID { get; set; }
         public string Name { get; set; }
         public DateTime Birthday { get; set; }
-        public string Nationality { get; set; }
+        public string Country { get; set; }
         public int Phone { set; get; }
         public string Email { get; set; }
         public string Password { get; set; }

@@ -11,9 +11,10 @@ using System;
 namespace CottonFields.Data.Migrations
 {
     [DbContext(typeof(CottonContext))]
-    partial class CottonContextModelSnapshot : ModelSnapshot
+    [Migration("20180315100647_rename_MatrixNumber")]
+    partial class rename_MatrixNumber
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,11 +26,11 @@ namespace CottonFields.Data.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Country");
-
                     b.Property<string>("Members");
 
                     b.Property<string>("Name");
+
+                    b.Property<string>("Nationality");
 
                     b.HasKey("ID");
 
@@ -71,7 +72,11 @@ namespace CottonFields.Data.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("Artist");
+
                     b.Property<int?>("ArtistID");
+
+                    b.Property<string>("Label");
 
                     b.Property<int?>("LabelID");
 
@@ -111,11 +116,11 @@ namespace CottonFields.Data.Migrations
 
                     b.Property<DateTime>("Birthday");
 
-                    b.Property<string>("Country");
-
                     b.Property<string>("Email");
 
                     b.Property<string>("Name");
+
+                    b.Property<string>("Nationality");
 
                     b.Property<string>("Password");
 

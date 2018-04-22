@@ -11,9 +11,10 @@ using System;
 namespace CottonFields.Data.Migrations
 {
     [DbContext(typeof(CottonContext))]
-    partial class CottonContextModelSnapshot : ModelSnapshot
+    [Migration("20180315111152_release_correction2")]
+    partial class release_correction2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
